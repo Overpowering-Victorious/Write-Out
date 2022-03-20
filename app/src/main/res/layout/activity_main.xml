@@ -1,116 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/Background"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/T"
+        android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="100sp"
+        android:layout_marginRight="12sp"
+        android:layout_marginBottom="12sp"
         android:fontFamily="monospace"
         android:text="Write-Out"
         android:textColor="@color/black"
         android:textColorHighlight="@color/white"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/L1"
+        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/T"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/t1"
+        android:layout_marginTop="50sp"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/E"
+            android:id="@+id/e1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="12sp"
             android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
-            android:drawablePadding="5dp"
+            android:drawablePadding="5sp"
             android:hint="E-mail"
-            android:padding="10dp"
+            android:padding="10sp"
             android:textColorHint="@color/grey"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
 
         <EditText
-            android:id="@+id/U"
+            android:id="@+id/u1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="12sp"
             android:drawableLeft="@drawable/ic_baseline_person_24"
-            android:drawablePadding="5dp"
+            android:drawablePadding="5sp"
             android:hint="Username"
-            android:padding="10dp"
+            android:padding="10sp"
             android:textColorHint="@color/grey"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/P0"
+            android:id="@+id/p0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="12sp"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawablePadding="5dp"
+            android:drawablePadding="5sp"
             android:hint="Password"
-            android:padding="10dp"
+            android:padding="10sp"
             android:textColorHint="@color/grey"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/P1"
+            android:id="@+id/p1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="12sp"
             android:hint="Re-enter Password"
-            android:padding="10dp"
+            android:padding="10sp"
             android:textColorHint="@color/grey"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
-        android:layout_below="@+id/L1"
+        android:layout_below="@+id/l1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/B"
+        android:id="@+id/b1"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/purple_700"
         android:text="Sign Up"
         android:clickable="true"
         android:textColor="@color/red"
         android:gravity="center"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_margin="12dp"
+        android:layout_margin="12sp"
         />
+
     <TextView
         android:id="@+id/LIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/B"
+        android:layout_below="@+id/b1"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="1dp"
-        android:textColor="@color/purple_700"
-        android:text="Log In"
+        android:layout_marginStart="1sp"
+        android:textAlignment="center"
+        android:layout_marginTop="1sp"
+        android:layout_marginEnd="1sp"
+        android:layout_marginBottom="1sp"
         android:linksClickable="true"
-        android:padding="10dp"
-        android:textColorHint="@color/grey"
-        android:textSize="18dp" />
+        android:padding="10sp"
+        android:text="Login"
+        android:textColor="@color/purple_700"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

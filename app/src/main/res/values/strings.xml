@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Write Out</string>
+    <string name="Login">
+        <a href="Lin.xml">Login</a></string>
+    <string name="SignUp">
+        <a href="activity_main.xml">Sign Up</a></string>
+    <string name="FPass">
+        <a href="FPass.xml">Forgot Password?</a></string>
+    <string name="OTP">
+        <a href="OTP.xml">Send OTP</a></string>
 </resources>
