@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/Write-Out- Master/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/FPass.xml" value="0.25" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/LIn.xml" value="0.264" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/OTP.xml" value="0.25" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/components.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/forgotpassword.xml" value="0.1743659420289855" />
+        <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/fragment_others__articles.xml" value="0.264" />
+        <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/home.xml" value="0.264" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/layout.xml" value="0.25" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/login.xml" value="0.16" />
         <entry key="..\:/Users/Abhinav Om Tyagi/AndroidStudioProjects/WriteOut/app/src/main/res/layout/otp.xml" value="0.2" />
