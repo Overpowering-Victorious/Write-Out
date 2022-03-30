@@ -64,6 +64,7 @@
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5sp"
             android:hint="Password"
+            android:inputType="textPassword"
             android:padding="10sp"
             android:textColorHint="@color/grey"
             android:textSize="24sp" />
@@ -74,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
             android:hint="Re-enter Password"
+            android:inputType="textPassword"
             android:padding="10sp"
             android:textColorHint="@color/grey"
             android:textSize="24sp" />
