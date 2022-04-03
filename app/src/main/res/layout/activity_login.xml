@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/background"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".login">
 
     <TextView
         android:id="@+id/t2"
@@ -36,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12sp"
-            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
             android:drawablePadding="5sp"
-            android:hint="Username or E-mail"
+            android:hint="E-mail"
             android:padding="10sp"
             android:textColorHint="@color/grey"
             android:textSize="24sp" />

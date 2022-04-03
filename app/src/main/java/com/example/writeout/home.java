@@ -25,13 +25,13 @@ public class home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
-        
+        setContentView(R.layout.activity_home);
+
         tabLayout=findViewById(R.id.tablayout);
         viewPager=findViewById(R.id.viewpager);
-        
+
         tabLayout.setupWithViewPager(viewPager);
-        
+
         VPAdapter vpAdapter= new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         vpAdapter.addFragment(new Others_Articles(), "Other's Articles");
         vpAdapter.addFragment(new My_Articles(), "My Articles");

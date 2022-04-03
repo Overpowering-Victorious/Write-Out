@@ -23,11 +23,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class login extends AppCompatActivity {
 
-    private EditText Email1,Uname1,Pass1,RePass;
-    private TextView Login;
-    private Button B1;
+    private EditText Email1,Email2,Uname1,Uname2,Pass1,Pass2,RePass,OTP;
+    private TextView Login,FPass,Signup;
+    private Button B1,B2,B3,B4;
     private FirebaseAuth fAuth;
 
     @Override
@@ -36,13 +36,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Email1=findViewById(R.id.e1);
+        Email2=findViewById(R.id.e2);
         Uname1=findViewById(R.id.u1);
+        Uname2=findViewById(R.id.u2);
         Pass1=findViewById(R.id.p0);
         RePass=findViewById(R.id.p1);
+        Pass2=findViewById(R.id.p2);
+        OTP=findViewById(R.id.otp);
 
         Login=findViewById(R.id.LIn);
+        FPass=findViewById(R.id.p3);
+        Signup=findViewById(R.id.SUp);
 
         B1=findViewById(R.id.b1);
+        B2=findViewById(R.id.b2);
+        B3=findViewById(R.id.b3);
+        B4=findViewById(R.id.b4);
 
         fAuth= FirebaseAuth.getInstance();
 
@@ -51,12 +60,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),login.class));
-            }
-        });
 
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "Data Saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "Data Saved", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),home.class));
                         }
                         else {
-                            Toast.makeText(MainActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
