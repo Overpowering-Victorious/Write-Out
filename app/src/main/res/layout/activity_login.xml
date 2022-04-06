@@ -67,13 +67,13 @@
         android:layout_marginTop="1sp"
         android:layout_marginEnd="1sp"
         android:layout_marginBottom="1sp"
-        android:text="Forgot Password?"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:linksClickable="true"
         android:padding="10sp"
+        android:text="Forgot Password?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/purple_700"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <Button
         android:layout_below="@+id/p3"
@@ -104,7 +104,6 @@
         android:textColor="@color/purple_700"
         android:text="Sign Up"
         android:textStyle="bold"
-        android:linksClickable="true"
         android:padding="10sp"
         android:textSize="18sp" />
 

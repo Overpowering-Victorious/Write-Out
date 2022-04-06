@@ -25,10 +25,10 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText Email1,Uname1,Pass1,RePass;
-    private TextView Login;
-    private Button B1;
-    private FirebaseAuth fAuth;
+    EditText Email1,Uname1,Pass1,RePass;
+    TextView Loginpg;
+    Button B1;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Pass1=findViewById(R.id.p0);
         RePass=findViewById(R.id.p1);
 
-        Login=findViewById(R.id.LIn);
+        Loginpg=findViewById(R.id.LIn);
 
         B1=findViewById(R.id.b1);
 
@@ -50,13 +50,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),home.class));
             finish();
         }
-
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),login.class));
-            }
-        });
 
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        Loginpg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),login.class));
             }
         });
 

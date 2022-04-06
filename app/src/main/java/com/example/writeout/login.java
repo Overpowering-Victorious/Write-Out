@@ -25,67 +25,40 @@ import java.util.HashMap;
 
 public class login extends AppCompatActivity {
 
-    private EditText Email1,Email2,Uname1,Uname2,Pass1,Pass2,RePass,OTP;
-    private TextView Login,FPass,Signup;
-    private Button B1,B2,B3,B4;
-    private FirebaseAuth fAuth;
+    EditText Email2,Uname2,Pass2;
+    TextView FPass,Signup;
+    Button B2;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Email1=findViewById(R.id.e1);
-        Email2=findViewById(R.id.e2);
-        Uname1=findViewById(R.id.u1);
-        Uname2=findViewById(R.id.u2);
-        Pass1=findViewById(R.id.p0);
-        RePass=findViewById(R.id.p1);
+        Email2=findViewById(R.id.u2);
         Pass2=findViewById(R.id.p2);
-        OTP=findViewById(R.id.otp);
 
-        Login=findViewById(R.id.LIn);
         FPass=findViewById(R.id.p3);
         Signup=findViewById(R.id.SUp);
 
-        B1=findViewById(R.id.b1);
         B2=findViewById(R.id.b2);
-        B3=findViewById(R.id.b3);
-        B4=findViewById(R.id.b4);
 
         fAuth= FirebaseAuth.getInstance();
 
-        if(fAuth.getCurrentUser() !=null){
-            startActivity(new Intent(getApplicationContext(),home.class));
-            finish();
-        }
-
-
-        B1.setOnClickListener(new View.OnClickListener() {
+        B2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String getUserName = Uname1.getText().toString();
-                String getEmail = Email1.getText().toString();
-                String getPass = Pass1.getText().toString();
-                String getRePass = RePass.getText().toString();
+                String getEmail = Email2.getText().toString();
+                String getPass = Pass2.getText().toString();
 
                 if(TextUtils.isEmpty(getEmail)){
-                    Email1.setError("Email is required!");
+                    Email2.setError("Email is required!");
                     return;
                 }
 
-                if(TextUtils.isEmpty(getUserName)){
-                    Uname1.setError("Username is required!");
-                    return;
-                }
 
                 if(TextUtils.isEmpty(getPass)){
-                    Pass1.setError("Password is required!");
-                    return;
-                }
-
-                if(TextUtils.isEmpty(getRePass)){
-                    RePass.setError("Please re-enter the password!");
+                    Pass2.setError("Password is required!");
                     return;
                 }
 
@@ -93,7 +66,7 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(login.this, "Data Saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "Logged In", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),home.class));
                         }
                         else {

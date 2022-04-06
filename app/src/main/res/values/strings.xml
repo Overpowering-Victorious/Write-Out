@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">Write Out</string>
     <string name="Login">
-        <a href="Lin.class">Login</a></string>
+        <a href="activity_login.class">Login</a></string>
     <string name="SignUp">
         <a href="activity_main.class">Sign Up</a></string>
     <string name="FPass">
         <a href="FPass.class">Forgot Password?</a></string>
     <string name="OTP">
         <a href="OTP.class">Send OTP</a></string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

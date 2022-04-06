@@ -10,27 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class Adapter1 extends RecyclerView.Adapter<Adapter1.ViewHolder> {
 
     private List<ModelClass> list;
 
-    public Adapter (List<ModelClass>list){
+    public Adapter1 (List<ModelClass>list){
         this.list=list;
     }
 
     @NonNull
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Adapter1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.components,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-            String a=list.get(position).getA1();
-            String d=list.get(position).getD1();
+    public void onBindViewHolder(@NonNull Adapter1.ViewHolder holder, int position) {
+        String a=list.get(position).getA1();
+        String d=list.get(position).getD1();
 
-            holder.setData(a,d);
+        holder.setData(a,d);
     }
 
     @Override

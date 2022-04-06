@@ -89,13 +89,13 @@
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/purple_700"
         android:text="Sign Up"
-        android:clickable="true"
+        android:onClick="Sign Up"
         android:textColor="@color/red"
         android:gravity="center"
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_margin="12sp"
-        />
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/LIn"
@@ -107,12 +107,15 @@
         android:layout_marginTop="1sp"
         android:layout_marginEnd="1sp"
         android:layout_marginBottom="1sp"
-        android:linksClickable="true"
         android:padding="10sp"
+        android:linksClickable="true"
+        android:clickable="true"
+        android:textColorLink="@color/purple_500"
         android:text="@string/Login"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
 
 </RelativeLayout>
