@@ -78,5 +78,12 @@ public class login extends AppCompatActivity {
             }
         });
 
+        FPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
     }
 }

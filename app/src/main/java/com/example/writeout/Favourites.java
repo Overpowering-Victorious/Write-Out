@@ -31,7 +31,7 @@ public class Favourites extends Fragment {
     private void initRecyclerView() {
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        adapter= new Adapter(list);
+        adapter= new Adapter((ArrayList<ModelClass>) list);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

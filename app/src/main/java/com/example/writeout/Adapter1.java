@@ -8,11 +8,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter1 extends RecyclerView.Adapter<Adapter1.ViewHolder> {
 
-    private List<ModelClass> list;
+     List<ModelClass> list;
 
     public Adapter1 (List<ModelClass>list){
         this.list=list;

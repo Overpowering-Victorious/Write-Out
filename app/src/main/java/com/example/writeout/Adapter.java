@@ -6,31 +6,33 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.viewholder> {
 
-    private List<ModelClass> list;
+    ArrayList<ModelClass> list;
 
-    public Adapter (List<ModelClass>list){
+    public Adapter (ArrayList<ModelClass>list){
         this.list=list;
     }
 
     @NonNull
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Adapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.components,parent,false);
-        return new ViewHolder(view);
+        return new viewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-            String a=list.get(position).getA1();
-            String d=list.get(position).getD1();
+    public void onBindViewHolder(@NonNull viewholder holder, int position) {
 
-            holder.setData(a,d);
+          holder.textView1.setText(list.get(position).getA1());
+          holder.textView2.setText(list.get(position).getD1());
+
     }
 
     @Override
@@ -38,21 +40,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class viewholder extends RecyclerView.ViewHolder{
 
         private TextView textView1;
         private TextView textView2;
 
-        public ViewHolder(@NonNull View itemView) {
+        public viewholder(@NonNull View itemView) {
             super(itemView);
 
             textView1=itemView.findViewById(R.id.a1);
             textView2=itemView.findViewById(R.id.d1);
-        }
-
-        public void setData(String a, String d) {
-            textView1.setText(a);
-            textView2.setText(d);
         }
     }
 }
