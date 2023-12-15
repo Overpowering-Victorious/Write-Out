@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:alpha="0.9"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="monospace"
+        android:text="Write-Out"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/white"
+        android:textSize="55sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t1"
+        android:layout_marginTop="50sp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/e1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12sp"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:drawablePadding="5sp"
+            android:inputType="textEmailAddress"
+            android:hint="E-mail"
+            android:padding="10sp"
+            android:textColorHint="@color/grey"
+            android:textSize="24sp" />
+
+
+        <EditText
+            android:id="@+id/p1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12sp"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawablePadding="5sp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10sp"
+            android:textColorHint="@color/grey"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/p2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12sp"
+            android:hint="Re-enter Password"
+            android:inputType="textPassword"
+            android:padding="10sp"
+            android:textColorHint="@color/grey"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_below="@+id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="SignUp"
+        android:onClick="SignUp"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_below="@+id/b1"
+        android:id="@+id/lg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:padding="5sp"
+        android:onClick="Loginn"
+        android:text="Already have account? Login?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>
