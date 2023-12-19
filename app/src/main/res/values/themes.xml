@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Write_Out" parent="Base.Theme.Write_Out" />
+
+    <style name="Base.Theme.Write_Out.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
 </resources>

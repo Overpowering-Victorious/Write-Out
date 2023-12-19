@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pxfuel"
+    android:alpha="0.9"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/purple_500"
+        />
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_below="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@+id/l4"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b3"
+            android:layout_width="119dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="0.1dp"
+            app:cornerRadius="0dp"
+            android:text="My Articles" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b4"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="0.1dp"
+            app:cornerRadius="0dp"
+            android:text="Explore" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="0.1dp"
+            app:cornerRadius="0dp"
+            android:text="Favourites"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

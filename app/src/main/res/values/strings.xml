@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Write Out</string>
+    <string name="open">op</string>
+    <string name="close">cl</string>
 </resources>

@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="General">
+        <menu>
+            <item
+                android:icon="@drawable/baseline_article_24"
+                android:title="My Articles"
+                />
+            <item android:title="Add New"
+                android:icon="@drawable/baseline_add_circle_24"/>
+            <item android:title="Sync"
+                android:icon="@drawable/baseline_sync_24"/>
+        </menu>
+    </item>
+    <item android:title="Support">
+        <menu>
+            <item android:title="Rate Us"
+                android:icon="@drawable/baseline_star_half_24"/>
+            <item android:title="Share App"
+                android:icon="@drawable/baseline_share_24"/>
+        </menu>
+    </item>
+    <item android:title="LogOut">
+        <menu>
+            <item android:title="LogOut"
+                android:icon="@drawable/baseline_logout_24"/>
+        </menu>
+    </item>
+
+</menu>
