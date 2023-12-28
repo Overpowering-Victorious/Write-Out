@@ -9,15 +9,16 @@
     >
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tool"
+        android:id="@+id/tool1"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/purple_500"
+        android:layout_height="60dp"
+        android:background="@color/purple_200"
+        android:theme="@style/Base.Theme.Write_Out"
         />
 
     <LinearLayout
         android:id="@+id/l3"
-        android:layout_below="@+id/tool"
+        android:layout_below="@+id/tool1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"

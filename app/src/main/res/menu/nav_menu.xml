@@ -5,24 +5,30 @@
             <item
                 android:icon="@drawable/baseline_article_24"
                 android:title="My Articles"
+                android:id="@+id/my_ar"
                 />
             <item android:title="Add New"
+                android:id="@+id/add_new"
                 android:icon="@drawable/baseline_add_circle_24"/>
             <item android:title="Sync"
+                android:id="@+id/sync"
                 android:icon="@drawable/baseline_sync_24"/>
         </menu>
     </item>
     <item android:title="Support">
         <menu>
             <item android:title="Rate Us"
+                android:id="@+id/rate_us"
                 android:icon="@drawable/baseline_star_half_24"/>
             <item android:title="Share App"
+                android:id="@+id/share_app"
                 android:icon="@drawable/baseline_share_24"/>
         </menu>
     </item>
     <item android:title="LogOut">
         <menu>
             <item android:title="LogOut"
+                android:id="@+id/log_out"
                 android:icon="@drawable/baseline_logout_24"/>
         </menu>
     </item>
