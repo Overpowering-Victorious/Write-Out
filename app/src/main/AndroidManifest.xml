@@ -14,8 +14,8 @@
         tools:targetApi="31">
         <activity
             android:name=".Article_Details"
-            android:enableOnBackInvokedCallback="true"
             android:theme="@style/Base.Theme.Write_Out.NoActionBar"
+            android:parentActivityName=".Home"
             android:exported="false" />
         <activity
             android:name=".Home"

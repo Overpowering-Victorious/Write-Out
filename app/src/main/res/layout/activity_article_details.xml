@@ -8,9 +8,22 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool2"
-        android:background="@color/purple_200"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/purple_200"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/baseline_add_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" >
+
+    </androidx.appcompat.widget.AppCompatImageButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

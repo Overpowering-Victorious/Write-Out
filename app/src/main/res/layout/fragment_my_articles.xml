@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fuck_off_1"
+    android:background="@drawable/wa_img11"
     android:orientation="vertical"
     tools:context=".Fragments.my_articles">
 
