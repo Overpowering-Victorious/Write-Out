@@ -1,30 +1,34 @@
 package com.example.write_out.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.example.write_out.Adapters.Adapter1;
+import com.example.write_out.Adapters.Article;
+import com.example.write_out.Article_Details;
 import com.example.write_out.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class my_articles extends Fragment {
-
-    ArrayList<String>titles=new ArrayList<String>();
-    ArrayList<String>contents=new ArrayList<String>();
-    Adapter1 adpt;
     RecyclerView rv;
+    FirebaseFirestore fstore;
+    FirestoreRecyclerAdapter<Article,ArticleViewHolder> article_adapter;
 
     public my_articles() {
         // Required empty public constructor
@@ -34,6 +38,37 @@ public class my_articles extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        fstore=FirebaseFirestore.getInstance();
+        Query query=fstore.collection("My Articles").orderBy("title",Query.Direction.DESCENDING);
+
+        FirestoreRecyclerOptions<Article>  all_articles = new FirestoreRecyclerOptions.Builder<Article>()
+                .setQuery(query, Article.class)
+                .build();
+
+        article_adapter=new FirestoreRecyclerAdapter<Article, ArticleViewHolder>(all_articles) {
+            @Override
+            protected void onBindViewHolder(@NonNull ArticleViewHolder holder, int position, @NonNull Article model) {
+                holder.title.setText(model.getTitle());
+                holder.content.setText(model.getContent());
+                final int col=getRandom();
+                holder.content.setBackgroundColor(holder.v.getResources().getColor(col,null));
+
+                holder.v.setOnClickListener(v -> {
+                    Intent i=new Intent(v.getContext(), Article_Details.class);
+                    i.putExtra("title",model.getTitle());
+                    i.putExtra("content",model.getContent());
+                    i.putExtra("color",col);
+                    v.getContext().startActivity(i);
+                });
+            }
+
+            @NonNull
+            @Override
+            public ArticleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View v=LayoutInflater.from(getContext()).inflate(R.layout.article_layout,parent,false);
+                return new ArticleViewHolder(v);
+            }
+        };
     }
 
     @Override
@@ -49,22 +84,46 @@ public class my_articles extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        addData();
-
-        adpt=new Adapter1(getContext(),titles,contents);
         rv=view.findViewById(R.id.recycler1);
         rv.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-        rv.setAdapter(adpt);
+        rv.setAdapter(article_adapter);
 
     }
 
-    private void addData() {
-        titles.add("First Article");
-        titles.add("Second Article");
-        titles.add("Third Article");
+    public class ArticleViewHolder extends RecyclerView.ViewHolder{
 
-        contents.add("This is the content of first article, hope you like it!");
-        contents.add("This is the content of second article, hope you like it! This is the content of second article, hope you like it! This is the content of second article, hope you like it!");
-        contents.add("This is the content of third article, hope you like it!");
+        TextView title,content;
+        View v;
+        public ArticleViewHolder(@NonNull View itemView) {
+            super(itemView);
+            title=itemView.findViewById(R.id.title);
+            content=itemView.findViewById((R.id.art_content));
+            v=itemView;
+        }
+    }
+
+    private int getRandom() {
+        List<Integer> col=new ArrayList<>();
+        col.add(R.color.yellow);
+        col.add(R.color.lightGreen);
+        col.add(R.color.pink);
+        col.add(R.color.lightPurple);
+        col.add(R.color.skyblue);
+
+        Random rcolor=new Random();
+        int num=rcolor.nextInt(col.size());
+        return col.get(num);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        article_adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        article_adapter.stopListening();
     }
 }

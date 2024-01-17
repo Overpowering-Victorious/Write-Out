@@ -13,10 +13,26 @@
         android:theme="@style/Theme.Write_Out"
         tools:targetApi="31">
         <activity
+            android:name=".Edit_Article"
+            android:exported="false"
+            android:parentActivityName=".Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".New_Article"
+            android:exported="false"
+            android:parentActivityName=".Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
             android:name=".Article_Details"
-            android:theme="@style/Base.Theme.Write_Out.NoActionBar"
+            android:exported="false"
             android:parentActivityName=".Home"
-            android:exported="false" />
+            android:theme="@style/Base.Theme.Write_Out.NoActionBar" />
         <activity
             android:name=".Home"
             android:exported="true"

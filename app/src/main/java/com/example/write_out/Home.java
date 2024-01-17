@@ -1,15 +1,6 @@
 package com.example.write_out;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,10 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.write_out.Fragments.explore;
 import com.example.write_out.Fragments.favourites;
 import com.example.write_out.Fragments.my_articles;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -30,6 +30,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     NavigationView nv;
 
     MaterialButton B3,B4,B5;
+    FloatingActionButton B6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         B3=findViewById(R.id.b3);
         B4=findViewById(R.id.b4);
         B5=findViewById(R.id.b5);
+        B6=findViewById(R.id.new_add);
 
         B3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +85,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 tr.commit();
             }
         });
+
+        B6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, New_Article.class));
+            }
+        });
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -91,13 +100,15 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         ft.commit();
     }
 
+    public static int id=0;
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            default:
-                Toast.makeText(this,"Hehe...",Toast.LENGTH_SHORT).show();
-        }
+        id=item.getItemId();
+        if(id==R.id.add_new)
+            startActivity(new Intent(this, New_Article.class));
+        else
+            Toast.makeText(this,"Hehe...",Toast.LENGTH_SHORT).show();
         return false;
     }
 
