@@ -1,4 +1,4 @@
-package com.example.write_out;
+package com.example.write_out.Articles;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.write_out.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Article_Details extends AppCompatActivity {
@@ -41,6 +42,7 @@ public class Article_Details extends AppCompatActivity {
                 Intent i=new Intent(Article_Details.this, Edit_Article.class);
                 i.putExtra("title",data.getStringExtra("title"));
                 i.putExtra("content",data.getStringExtra("content"));
+                i.putExtra("articleID",data.getStringExtra("articleID"));
                 startActivity(i);
             }
         });

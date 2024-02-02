@@ -16,12 +16,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.write_out.Articles.New_Article;
+import com.example.write_out.Authentication.MainActivity;
 import com.example.write_out.Fragments.explore;
 import com.example.write_out.Fragments.favourites;
 import com.example.write_out.Fragments.my_articles;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -107,6 +110,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         id=item.getItemId();
         if(id==R.id.add_new)
             startActivity(new Intent(this, New_Article.class));
+        else if(id==R.id.log_out)
+        {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), Splash.class));
+        }
         else
             Toast.makeText(this,"Hehe...",Toast.LENGTH_SHORT).show();
         return false;

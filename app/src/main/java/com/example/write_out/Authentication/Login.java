@@ -1,4 +1,4 @@
-package com.example.write_out;
+package com.example.write_out.Authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.write_out.Home;
+import com.example.write_out.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {

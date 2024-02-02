@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:alpha="0.9"
-    tools:context=".MainActivity">
+    tools:context=".Authentication.MainActivity">
 
     <TextView
         android:id="@+id/t1"
@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:fontFamily="monospace"
-        android:text="Write-Out"
+        android:text="SignUp"
         android:textColor="@color/black"
         android:textColorHighlight="@color/white"
         android:textSize="55sp"
