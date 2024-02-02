@@ -1,17 +1,12 @@
 package com.example.write_out;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toast;
 
-import com.example.write_out.Authentication.MainActivity;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
+import com.example.write_out.Authentication.SignUp;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Splash extends AppCompatActivity {
@@ -31,7 +26,7 @@ public class Splash extends AppCompatActivity {
                 if(fauth.getCurrentUser()!=null)
                     startActivity(new Intent(getApplicationContext(), Home.class));
                 else{
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), SignUp.class));
 //                    fauth.signInAnonymously().addOnSuccessListener(new OnSuccessListener<AuthResult>() {
 //                        @Override
 //                        public void onSuccess(AuthResult authResult) {

@@ -14,7 +14,7 @@ import com.example.write_out.Home;
 import com.example.write_out.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     EditText E1,P1,P2;
     FirebaseAuth FAuth;
@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
             FAuth.createUserWithEmailAndPassword(Email,Pass1).addOnCompleteListener(task -> {
                 if(task.isComplete())
                 {
-                    Toast.makeText(MainActivity.this,"Signed Up successfully",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Home.class));
+                    Toast.makeText(SignUp.this,"Signed Up successfully",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignUp.this, Home.class));
                 }
                 else{
-                    Toast.makeText(MainActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this,"Error",Toast.LENGTH_SHORT).show();
                 }
             });
         }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:alpha="0.9"
-    tools:context=".Authentication.MainActivity">
+    tools:context=".Authentication.SignUp">
 
     <TextView
         android:id="@+id/t1"

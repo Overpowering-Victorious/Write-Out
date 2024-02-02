@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
 
     public void SignUpp(View v)
     {
-        Intent i=new Intent(this, MainActivity.class);
+        Intent i=new Intent(this, SignUp.class);
         startActivity(i);
     }
 

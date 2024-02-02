@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.write_out.Articles.New_Article;
-import com.example.write_out.Authentication.MainActivity;
 import com.example.write_out.Fragments.explore;
 import com.example.write_out.Fragments.favourites;
 import com.example.write_out.Fragments.my_articles;
