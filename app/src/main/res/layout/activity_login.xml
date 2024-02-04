@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:fontFamily="monospace"
-        android:text="Write-Out"
+        android:text="LogIn"
         android:textColor="@color/black"
         android:textColorHighlight="@color/white"
         android:textSize="55sp"
@@ -87,6 +87,16 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
         />
 
 </RelativeLayout>

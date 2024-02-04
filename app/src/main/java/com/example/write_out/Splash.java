@@ -20,13 +20,14 @@ public class Splash extends AppCompatActivity {
         fauth=FirebaseAuth.getInstance();
 
         Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(fauth.getCurrentUser()!=null)
-                    startActivity(new Intent(getApplicationContext(), Home.class));
-                else{
-                    startActivity(new Intent(getApplicationContext(), SignUp.class));
+        handler.postDelayed(() -> {
+            if(fauth.getCurrentUser()!=null) {
+                startActivity(new Intent(getApplicationContext(), Home.class));
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+            }
+            else{
+                startActivity(new Intent(getApplicationContext(), SignUp.class));
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
 //                    fauth.signInAnonymously().addOnSuccessListener(new OnSuccessListener<AuthResult>() {
 //                        @Override
 //                        public void onSuccess(AuthResult authResult) {
@@ -39,8 +40,8 @@ public class Splash extends AppCompatActivity {
 //                            Toast.makeText(Splash.this,"Error: "+ e.getMessage(), Toast.LENGTH_SHORT).show();
 //                        }
 //                    });
-                }
             }
-        },2000);
+            finish();
+        },1000);
     }
 }

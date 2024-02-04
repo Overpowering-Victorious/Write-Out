@@ -75,6 +75,7 @@ public class my_articles extends Fragment{
                     i.putExtra("color",col);
                     i.putExtra("articleID",docId);
                     v.getContext().startActivity(i);
+                    getActivity().overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
                 });
 
                 ImageView imv=holder.view.findViewById(R.id.art_set);
@@ -91,6 +92,7 @@ public class my_articles extends Fragment{
                                 i.putExtra("content",model.getContent());
                                 i.putExtra("articleID",docId);
                                 startActivity(i);
+                                getActivity().overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
                                 return false;
                             }
                         });

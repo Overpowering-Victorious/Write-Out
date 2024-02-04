@@ -44,6 +44,7 @@ public class Article_Details extends AppCompatActivity {
                 i.putExtra("content",data.getStringExtra("content"));
                 i.putExtra("articleID",data.getStringExtra("articleID"));
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
             }
         });
 

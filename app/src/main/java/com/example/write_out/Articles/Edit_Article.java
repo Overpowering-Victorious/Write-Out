@@ -82,6 +82,7 @@ public class Edit_Article extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         Toast.makeText(Edit_Article.this, "Article saved", Toast.LENGTH_SHORT).show();
                         NavUtils.navigateUpFromSameTask(Edit_Article.this);
+                        overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -103,8 +104,10 @@ public class Edit_Article extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.cancel)
+        if(item.getItemId()==R.id.cancel) {
             NavUtils.navigateUpFromSameTask(Edit_Article.this);
+            overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+        }
         return super.onOptionsItemSelected(item);
     }
 }
