@@ -1,5 +1,6 @@
 package com.example.write_out;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.write_out.Articles.New_Article;
 import com.example.write_out.Fragments.explore;
@@ -32,11 +32,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     DrawerLayout dl;
     ActionBarDrawerToggle tg;
     NavigationView nv;
-
+    Fragment fragment;
     MaterialButton B3,B4,B5;
     FloatingActionButton B6;
     FirebaseUser user;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +53,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         nv=findViewById(R.id.nav);
         nv.setNavigationItemSelectedListener(this);
-
-
 
         my_articles my_article= new my_articles();
         replaceFragment(my_article);
@@ -75,11 +74,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         B6=findViewById(R.id.new_add);
 
         B3.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 my_articles my_article= new my_articles();
                 replaceFragment(my_article);
-                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
             }
         });
 
@@ -87,10 +86,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onClick(View v) {
                 explore exp=new explore();
-                FragmentTransaction tr=getSupportFragmentManager().beginTransaction();
-                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
-                tr.replace(R.id.l3,exp);
-                tr.commit();
+                replaceFragment(exp);
             }
         });
 
@@ -98,10 +94,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onClick(View v) {
                 favourites fv= new favourites();
-                FragmentTransaction tr=getSupportFragmentManager().beginTransaction();
-                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
-                tr.replace(R.id.l3,fv);
-                tr.commit();
+                replaceFragment(fv);
             }
         });
 
@@ -109,15 +102,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Home.this, New_Article.class));
-                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
             }
         });
     }
 
     private void replaceFragment(Fragment fragment) {
-        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.l3,fragment);
-        ft.commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.l3, fragment).commit();
     }
 
     public static int id=0;

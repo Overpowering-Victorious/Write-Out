@@ -2,6 +2,7 @@ package com.example.write_out.Articles;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -55,6 +56,7 @@ public class New_Article extends AppCompatActivity {
             public void onClick(View v) {
                 String ntitle=title.getText().toString();
                 String ncontent=content.getText().toString();
+                String uid=user.getUid();
                 if(TextUtils.isEmpty(ntitle) && TextUtils.isEmpty(ncontent))
                 {
                     Toast.makeText(New_Article.this,"Error! Try again", Toast.LENGTH_SHORT).show();
@@ -63,9 +65,10 @@ public class New_Article extends AppCompatActivity {
 
                 pb.setVisibility(View.VISIBLE);
 
-                DocumentReference docref = fstore.collection("Articles").document(user.getUid()).collection("My Articles").document();
+                DocumentReference docref = fstore.collection("Articles").document(uid).collection("My Articles").document();
                 Map<String, Object> article = new HashMap<>();
 
+                article.put("UserId",uid);
                 article.put("title", ntitle);
                 article.put("content", ncontent);
 
@@ -99,6 +102,7 @@ public class New_Article extends AppCompatActivity {
         if(item.getItemId()==R.id.cancel) {
             NavUtils.navigateUpFromSameTask(New_Article.this);
             overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -107,6 +107,7 @@ public class Edit_Article extends AppCompatActivity {
         if(item.getItemId()==R.id.cancel) {
             NavUtils.navigateUpFromSameTask(Edit_Article.this);
             overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

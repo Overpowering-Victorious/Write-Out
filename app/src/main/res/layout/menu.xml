@@ -12,7 +12,7 @@
         android:id="@+id/tool1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/purple_200"
+        android:background="@color/dtblue"
         android:theme="@style/Base.Theme.Write_Out"
         />
 
@@ -38,6 +38,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/b3"
             android:layout_width="119dp"
+            app:backgroundTint="@color/dtblue"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="0.1dp"
@@ -49,6 +50,7 @@
             android:layout_width="125dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            app:backgroundTint="@color/dtblue"
             android:layout_margin="0.1dp"
             app:cornerRadius="0dp"
             android:text="Explore" />
@@ -58,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            app:backgroundTint="@color/dtblue"
             android:layout_margin="0.1dp"
             app:cornerRadius="0dp"
             android:text="Favourites"
